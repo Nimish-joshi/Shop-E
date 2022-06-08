@@ -1,0 +1,98 @@
+[
+    {
+      "id":1,
+      "img":"assets/img/iPhone 13 pro max.jpg",
+      "name":" IPhone 13 pro max",
+      "description":"apple product/SmartPhone",
+      "price":250000,
+      "bgcolor":true,
+      "category":"mobile",
+      "Release_date":"2022-05-24T10:27:37.782Z" ,
+      "code":"mobile-001",
+      "rating":4.5
+
+
+    },
+    {
+      "id":2,
+      "img":"assets/img/samsung_M33.png",
+      "name":" Samsung M33",
+      "description":"Samsung Mobile/SmartPhone/5G",
+      "price": 35000,
+      "bgcolor":false,
+      "category":"mobile",
+      "Release_date":"2022-05-24T10:27:37.782Z" ,
+      "code":"mobile-002",
+      "rating":3.5
+
+
+
+    },
+    {
+      "id":3,
+      "img":"assets/img/oneplus_TV.jpg",
+      "name":" OnePlus TV",
+      "description":"LED 4K TV",
+      "price": 30000,
+      "bgcolor":true,
+      "category":"tv",
+      "Release_date":"2022-05-24T10:27:37.782Z" ,
+      "code":"tv-001",
+      "rating":5.0
+
+
+
+
+
+    },
+    {
+      "id":4,
+      "img":"assets/img/LG-TV.jpg",
+      "name":" LG TV",
+      "description":"LG OLED TV",
+      "price": 159999,
+      "bgcolor":false,
+      "category":"tv",
+      "Release_date":"2022-05-24T10:27:37.782Z" ,
+      "code":"tv-001",
+      "rating":0.5
+
+
+
+    },
+    {
+      "id":5,
+      "img":"assets/img/godrej200.jpg",
+      "name":" Godrej Refrigerator",
+      "description":"20L refrigerator",
+      "price":18999,
+      "bgcolor":true,
+      "category":"fridge",
+      "Release_date":"2022-05-24T10:27:37.782Z" ,
+      "code":"fridge",
+      "rating":2.0
+
+
+
+
+    },
+    {
+      "id":6,
+      "img":"assets/img/boat.jpg",
+      "name":" Boat HeadPhones",
+      "description":"High Bass/ Noise Cancellation HeadPhones",
+      "price": 5999,
+      "bgcolor":false,
+      "category":"headphones",
+      "Release_date":"2022-05-24T10:27:37.782Z" ,
+      "code":"headphone-001",
+      "rating":4.0
+
+
+
+
+
+    }
+    
+  
+]

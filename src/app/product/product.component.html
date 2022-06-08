@@ -1,0 +1,96 @@
+<!-- filter button and search bar start -->
+<div class="container mb-3">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+        <label class="btn btn-outline-danger" (click)="filterProduct('all')" for="btnradio1">all</label>
+      
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+        <label class="btn btn-outline-danger" (click)="filterProduct('mobile')" for="btnradio2">mobile</label>
+      
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+        <label class="btn btn-outline-danger" (click)="filterProduct('tv')" for="btnradio3">tv</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+        <label class="btn btn-outline-danger" (click)="filterProduct('fridge')" for="btnradio4">fridge</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
+        <label class="btn btn-outline-danger" (click)="filterProduct('headphones')" for="btnradio5">headphones</label>
+
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12">
+      <input class="form-control" type="text" placeholder="product name" [(ngModel)]="searchBy"  >
+    </div>
+    <!-- subscribe button -->
+    <div class="col-2">
+      <!-- <p>{{searchBy}}</p> -->
+      <button class="btn btn-primary" (click)="unsubobs()"><i class="bi bi-bell-slash"></i> unsubscribe</button>
+    </div>
+  </div>
+</div>
+<!-- filter button and search bar code and subscribe button of observables end -->
+
+
+<!-- card code start -->
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-3 col-md-4 col-sm-12 mb-3" *ngFor="let product of filterProductArray |slice:startIndex:endIndex">
+      <div class="card" style="width: 18rem;" [class.bgcolor]="product.bgcolor" [style.width.rem]="cardwidth" [style.box-shadow]="shadow" [ngStyle]="cardTextstyle" >
+        <img [src]="product.img" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title" [routerLink]="['/product',product.id]" >{{product.name | titlecase}}</h5>
+          <p class="card-text" [title]="product.description">{{(product.description | slice:0:15)+"..."}}</p>
+          <p class="card-text">{{product.price | currency :'INR':true:'4.2'}}</p>
+          <p class="card-text">{{product.Release_date | date:'d/MM/y' }}</p>
+          <p class="card-text">{{product.code | dash_to_space}}</p>
+          <!-- <p class="card-text">Rating - {{product.rating}}</p> -->
+          <p class="card-text" data-bs-toggle="tooltip" data-bs-placement="top" [title]="product.rating"><app-star [rating]="product.rating" (sendRating)="displayRating($event)"></app-star></p>
+          <a class="btn btn-primary"(click)="addToCart()" ><i class="bi bi-cart3"></i> add to cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- card code end -->
+
+<!-- loading start -->
+
+
+<div class="container d-flex justify-content-center">
+  <div class="row">
+    <div class="col-12">
+      <div class="spinner-border" *ngIf="loading" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- loading end -->
+
+<!-- pagination starts -->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="...">
+        <ul class="pagination pagination-md justify-content-center">
+          <li class="page-item">
+            <a class="page-link"[class.demo]="demo==true" (click)="changePage(1)">1</a>
+          </li>
+          <li class="page-item"><a class="page-link" [class.demo]="demo==false" (click)="changePage(2)">2</a></li>
+          <!-- <li class="page-item"><a class="page-link"  (click)="changePage(3)">3</a></li> -->
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<!-- pagination ends -->
+
+
